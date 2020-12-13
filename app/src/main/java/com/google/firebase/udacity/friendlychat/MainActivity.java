@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialize Firebase components
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-      //  mFirebaseAuth=FirebaseAuth.getInstance();
+        //  mFirebaseAuth=FirebaseAuth.getInstance();
 
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child("messages");
 
@@ -153,8 +153,8 @@ public class MainActivity extends AppCompatActivity {
         mChildEventListener=new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                   FriendlyMessage friendlyMessage=dataSnapshot.getValue(FriendlyMessage.class);
-                   mMessageAdapter.add(friendlyMessage);
+                FriendlyMessage friendlyMessage=dataSnapshot.getValue(FriendlyMessage.class);
+                mMessageAdapter.add(friendlyMessage);
             }
 
             @Override
@@ -189,11 +189,11 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser user=mFirebaseAuth.getCurrentUser();
                 if(user!=null)
                 {
-                  //user is signed in
+                    //user is signed in
                 }
                 else
                 {
-                  //user is signed out
+                    //user is signed out
                     final List<AuthUI.IdpConfig> providers = Arrays.asList(
                             new AuthUI.IdpConfig.EmailBuilder().build(),
                             new AuthUI.IdpConfig.GoogleBuilder().build());
